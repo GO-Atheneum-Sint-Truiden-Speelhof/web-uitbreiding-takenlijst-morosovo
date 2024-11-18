@@ -14,6 +14,8 @@ Opdracht: Bouw een webapplicatie waarin een gebruiker een lijst van taken kan be
 #### HTML en CSS/Bootstrap: (5 punten)
 
 - Maak een formulier voor het invoeren van een nieuwe taak.
+  * user: "root"
+  * password: ""
 - Toon de lijst van taken in een gestileerde tabel, met knoppen om een taak te bewerken of te verwijderen.
 - Zorg dat de layout responsief is met Bootstrap.
 
