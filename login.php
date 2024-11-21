@@ -5,24 +5,35 @@
 <h1>Login</h1>
 <?php 
 if (isset($_POST["username"]) && !empty($_POST["username"])) {
+    echo "LOGIN FUNCTIE<br>";
     // inloggen
-    $servername = 'localhost';
-    $database = 'takenlijst';
-    $db_user = 'Elion';
-    $db_pwd = 'Elion14';
+    $servername = "localhost";
+    $db_user = "Elion";
+    $db_pwd = "Elion14";
+    $database = "takenlijst";
 
     $conn = new mysqli($servername,$db_user,$db_pwd,$database);
     if ($conn->connect_errno){
         echo 'Failed to connect: '.$conn->connect_error;
     }
 
-    $qry = "SELECT Wachtwoord FROM users WHERE Username = '".$POST_["username"]."'";
-    echo $qry;
+    $qry = "SELECT Wachtwoord FROM users WHERE Username = '".$_POST["username"]."'";
+    
     $result = $conn ->query($qry);
     if($result->num_rows > 0){
         $rij = $result -> fetch_row();
         $p = $rij[0];
-        echo password_verify($_POST["Wachtwoord"],$p);
+        if(password_verify($_POST["password"],$p)){
+            //Goede login
+            echo 'OK';
+        }
+        else {
+            //fout paswoord
+            echo 'FOUT';
+        }
+    }else {
+        //fout gebruiker
+        echo 'FOUTT';
     }
 } else {
     // formulier tonen

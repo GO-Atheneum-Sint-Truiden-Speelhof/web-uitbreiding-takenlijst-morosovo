@@ -1,17 +1,7 @@
-<?php
-$tmp = '$2y$10$QD8OlLDH4QpTxqdkEomI8eOH8d1U5jJxT7rhYXKU5ZVIbPSVu4bji';
-    if(isset($_GET["pwd"]) && !empty($_GET["pwd"])){
-       if(password_verify($_GET["pwd"], $tmp)){
-        echo "LOGIN SUCCESS";
-       }
-    }
-?>
-<html>
-    <head></head>
-    <body>
-        <form action="pwd.php" method="get">
-            <input type="text" name="pwd">
-            <button type="submit" value="Klik">Klik</button>
-</form>
-</body>
-</html>
+<?php echo password_hash("pwd",PASSWORD_DEFAULT); ?>
+<br>
+<?php 
+$hash = '$2y$10$id2/midY05a.i29/0RF6Lu9by1.J2U0TZ0oIZkhA86b/.RPBGWKZi';
+if(password_verify('pwd', $hash)){
+    echo "CORRECT";
+} ?>
