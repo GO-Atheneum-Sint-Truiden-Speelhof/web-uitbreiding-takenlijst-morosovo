@@ -13,3 +13,11 @@
         <input type="text" id="task" name="task" required>
         <button type="submit">Toevoegen</button>
     </form>
+
+    <h2>Takenlijst</h2>
+    <ul>
+        <li>Voorbeeldtaak 1 <button>Bewerken</button> <button>Verwijderen</button></li>
+        <li>Voorbeeldtaak 2 <button>Bewerken</button> <button>Verwijderen</button></li>
+    </ul>
+</body>
+</html>
