@@ -4,11 +4,12 @@
 <body>
 <h1>Login</h1>
 <?php 
-if (isset($_POST["Username"]) && !empty($_POST["Username"])) {
+if (isset($_POST["username"]) && !empty($_POST["username"])) {
+    echo "LOGIN FUNCTIE<br>";
     // inloggen
     $servername = "localhost";
-    $db_user = "nermine";
-    $db_pwd = "0417";
+    $db_user = "Elion";
+    $db_pwd = "Elion14";
     $database = "takenlijst";
 
     $conn = new mysqli($servername,$db_user,$db_pwd,$database);
@@ -16,13 +17,23 @@ if (isset($_POST["Username"]) && !empty($_POST["Username"])) {
         echo 'verbinding mislukt: '.$conn->connect_error;
     }
 
-    $qry = "SELECT Wachtwoord FROM users WHERE Username = '".$_POST["Username"]."'";
-    echo $qry;
+    $qry = "SELECT Wachtwoord FROM users WHERE Username = '".$_POST["username"]."'";
+    
     $result = $conn ->query($qry);
     if($result->num_rows > 0){
         $rij = $result -> fetch_row();
         $p = $rij[0];
-        echo password_verify($_POST["Wachtwoord"],$p);
+        if(password_verify($_POST["password"],$p)){
+            //Goede login
+            echo 'OK';
+        }
+        else {
+            //fout paswoord
+            echo 'FOUT';
+        }
+    }else {
+        //fout gebruiker
+        echo 'FOUTT';
     }
 } else {
     // formulier tonen
