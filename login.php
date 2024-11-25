@@ -8,8 +8,8 @@ if (isset($_POST["username"]) && !empty($_POST["username"])) {
     echo "LOGIN FUNCTIE<br>";
     // inloggen
     $servername = "localhost";
-    $db_user = "Elion";
-    $db_pwd = "Elion14";
+    $db_user = "root";
+    $db_pwd = "";
     $database = "takenlijst";
 
     $conn = new mysqli($servername,$db_user,$db_pwd,$database);
@@ -39,10 +39,10 @@ if (isset($_POST["username"]) && !empty($_POST["username"])) {
     // formulier tonen
     ?>
     <form action="login.php" method="post">
-        <label for="Username">Gebruikersnaam: </label>    
-        <input name="Username" id="Username" type="text">
-        <label for=">Password">Wachtwoord: </label>    
-        <input name="Password" id="Password" type="Password">
+        <label for="username">Gebruikersnaam: </label>    
+        <input name="username" id="username" type="text">
+        <label for="password">Wachtwoord: </label>    
+        <input name="password" id="password" type="Password">
         <button type="submit">Login</button>
     </form>
     <?php
