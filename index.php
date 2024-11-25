@@ -9,8 +9,12 @@
     <h1>To-Do List</h1>
 
     <form action="taak.php" method="post">
-        <label for="task">Nieuwe taak:</label>
-        <input type="text" id="task" name="task" required>
+        <label> voeg database naam toe</label>
+        <input type="text" id="task" name="table-name">
+
+        <label> voeg velden toe gescheiden door een komma</label>
+        <texarea name="fields"></textarea>
+        
         <button type="submit">Toevoegen</button>
     </form>
 </body>
