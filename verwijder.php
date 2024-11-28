@@ -1,21 +1,11 @@
 <?php
 require 'db_connect.php';
 
-// Controleer of er een ID is meegegeven
-if (isset($_GET['username'])) {
-
-    // Verwijder de taak uit de database
-    $stmt = $conn->prepare("DELETE FROM tasks WHERE username = '".$_POST["username"]."'");
-    $stmt->bind_param('i', $id);
-    
-    if ($stmt->execute()) {
-
-        header('Location: index.php');
-        exit;
-    } else {
-        echo "Fout bij verwijderen van taak.";
-    }
-} else {
-    echo "Geen geldige username opgegeven.";
+if (isset($_GET['id'])) {
+    $id = intval($_GET['id']);
+    $conn->query("DELETE FROM todos WHERE id = $id");
 }
+
+header('Location: index.php');
+exit;
 ?>
