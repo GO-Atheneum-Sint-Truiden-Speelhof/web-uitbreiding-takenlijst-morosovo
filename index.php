@@ -1,14 +1,12 @@
 <?php
-session_start(); // Start sessie
+session_start();
 if (!isset($_SESSION['username'])) {
-    header('Location: login.php'); // Stuur niet-ingelogde gebruikers naar login.php
+    header('Location: login.php');
     exit;
 }
 
-
 require 'db_connect.php';
 
-// Controleer of de query werkt
 $result = $conn->query("SELECT * FROM todos");
 if (!$result) {
     die("Fout in de query: " . $conn->error);
@@ -27,17 +25,34 @@ if (!$result) {
         <h1 class="text-center mb-4">Takenlijst</h1>
         <!-- Formulier voor nieuwe taak -->
         <form action="taaak.php" method="post" class="mb-4">
-            <div class="input-group">
-                <input type="text" name="task" class="form-control" placeholder="Nieuwe taak toevoegen" required>
-                <button type="submit" class="btn btn-primary">Toevoegen</button>
+            <div class="mb-3">
+                <label for="task" class="form-label">Taaknaam:</label>
+                <input type="text" name="task" id="task" class="form-control" required>
             </div>
+            <div class="mb-3">
+                <label for="status" class="form-label">Status:</label>
+                <select name="status" id="status" class="form-select">
+                    <option value="Niet voltooid">Niet voltooid</option>
+                    <option value="Voltooid">Voltooid</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="instructies" class="form-label">Instructies:</label>
+                <textarea name="instructies" id="instructies" class="form-control" placeholder="Voeg instructies toe (optioneel)"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="deadline" class="form-label">Deadline:</label>
+                <input type="date" name="deadline" id="deadline" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Toevoegen</button>
         </form>
+
         <!-- Takenlijst -->
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Taaknaam</th>
-                    <th>Title</th>
+                    <th>Status</th>
                     <th>Instructies</th>
                     <th>Deadline</th>
                     <th>Acties</th>
@@ -54,12 +69,8 @@ if (!$result) {
                             <td>" . htmlspecialchars($row['instructies']) . "</td>
                             <td>" . htmlspecialchars($row['deadline']) . "</td>
                             <td>
-                                <a href='bewerk.php?id=" . $row['Id'] . "' class='btn btn-sm btn-primary' title='Bewerken'>
-                                    <img src='images/potlood.png' alt='Bewerken' width='20' height='20'>
-                                </a>
-                                <a href='verwijder.php?id=" . $row['Id'] . "' class='btn btn-sm btn-danger' title='Verwijderen' onclick=\"return confirm('Weet je zeker dat je deze taak wilt verwijderen?');\">
-                                    <img src='images/delete_icon.png' alt='Verwijderen' width='20' height='20'>
-                                </a>
+                                <a href='bewerk.php?id=" . $row['Id'] . "' class='btn btn-sm btn-primary'>Bewerken</a>
+                                <a href='verwijder.php?id=" . $row['Id'] . "' class='btn btn-sm btn-danger' onclick=\"return confirm('Weet je zeker dat je deze taak wilt verwijderen?');\">Verwijderen</a>
                             </td>
                         </tr>";
                     }
