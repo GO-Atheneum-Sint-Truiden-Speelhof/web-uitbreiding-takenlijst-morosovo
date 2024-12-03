@@ -23,7 +23,7 @@ if (!$result) {
 <body>
     <div class="container mt-5">
         <h1 class="text-center mb-4">Takenlijst</h1>
-        <!-- Formulier voor nieuwe taak -->
+        <!-- formulier voor nieuwe taak -->
         <form action="taaak.php" method="post" class="mb-4">
             <div class="mb-3">
                 <label for="task" class="form-label">Taaknaam:</label>

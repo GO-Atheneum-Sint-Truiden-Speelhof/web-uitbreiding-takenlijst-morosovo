@@ -16,9 +16,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 header('Location: index.php');
 exit;
-<<<<<<< HEAD
 ?>
 
-=======
-?>
->>>>>>> 91eca204e3922ba3f7c4148df3c5a8dd9c6becf2
