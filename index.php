@@ -65,7 +65,7 @@ if (!$result) {
                         echo "
                         <tr>
                             <td>" . htmlspecialchars($row['task']) . "</td>
-                            <td>" . htmlspecialchars($row['statuss']) . "</td>
+                            <td>" . htmlspecialchars($row['status']) . "</td>
                             <td>" . htmlspecialchars($row['instructies']) . "</td>
                             <td>" . htmlspecialchars($row['deadline']) . "</td>
                             <td>

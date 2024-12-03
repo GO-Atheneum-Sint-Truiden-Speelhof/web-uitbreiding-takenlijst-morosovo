@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    print_r($_POST);
     if (isset($_POST['id'], $_POST['task'], $_POST['status'], $_POST['instructies'], $_POST['deadline'])) {
         $id = intval($_POST['id']);
         $task = $conn->real_escape_string($_POST['task']);
@@ -42,6 +43,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <form method="POST" action="bewerk.php">
         <?php if (isset($task)): ?>
+            <input type="text" id="id" name="id" value="<?php echo $task['Id']; ?>" disabled>
+
             <label for="task">Taak:</label>
             <input type="text" id="task" name="task" value="<?php echo htmlspecialchars($task['task']); ?>" required>
             
