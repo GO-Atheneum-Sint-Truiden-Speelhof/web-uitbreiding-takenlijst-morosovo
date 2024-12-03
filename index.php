@@ -30,8 +30,8 @@ if (!$result) {
                 <input type="text" name="task" id="task" class="form-control" required>
             </div>
             <div class="mb-3">
-                <label for="status" class="form-label">Status:</label>
-                <select name="status" id="status" class="form-select">
+                <label for="statuss" class="form-label">Status:</label>
+                <select name="statuss" id="status" class="form-select">
                     <option value="Niet voltooid">Niet voltooid</option>
                     <option value="Voltooid">Voltooid</option>
                 </select>
@@ -65,7 +65,7 @@ if (!$result) {
                         echo "
                         <tr>
                             <td>" . htmlspecialchars($row['task']) . "</td>
-                            <td>" . htmlspecialchars($row['status']) . "</td>
+                            <td>" . htmlspecialchars($row['statuss']) . "</td>
                             <td>" . htmlspecialchars($row['instructies']) . "</td>
                             <td>" . htmlspecialchars($row['deadline']) . "</td>
                             <td>

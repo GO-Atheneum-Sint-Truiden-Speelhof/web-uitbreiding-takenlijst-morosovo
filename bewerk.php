@@ -42,8 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <form method="POST" action="bewerk.php">
         <?php if (isset($task)): ?>
-            <input type="text" id="task" name="task" value="<?php echo htmlspecialchars($task['task']); ?>" required>
-
             <label for="task">Taak:</label>
             <input type="text" id="task" name="task" value="<?php echo htmlspecialchars($task['task']); ?>" required>
             
