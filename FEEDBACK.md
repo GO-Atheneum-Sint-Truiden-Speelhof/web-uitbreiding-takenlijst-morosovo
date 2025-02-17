@@ -3,7 +3,7 @@
 | Opdracht | Goed (5) | Voldoende (3) | Onvoldoende (1) | Niet (0) | Score (60)|
 | :------- | :---: | :---------: | :-----------: | :----: |---:|
 | De leerling voorziet een formulier waar de gebruiker een nieuwe taak kan invoeren | |X | | |3 |
-| De leerling toon de lijst van taken in een tabel.  | X| | | |5 |
+| De leerling toon de lijst van taken in een tabel.  | |x | | |3 |
 | De leerling zorgt dat de layout responsief is. (Bootstrap)  |X | | | |5 |
 | De leerling creeërt een correcte databank + tabel voor de gegevens. | X| | | | 5|
 | De leerling kan de gegevens van een taak bewaren in een databank. | |X | | |3 |
@@ -23,7 +23,7 @@
 Je gebruikt geen 'server' om de gegevens op te vragen maar je schrijft SQL-code in je 'view'. Probeer voor volgende oefening je 'view' en 'server' te splitsen.
 -> Alles met SQL gaat van Goed naar Voldoende.
 
-Je behaalde een score van __24/35__ en __0/15__
+Je behaalde een score van __22/35__ en __0/15__
 
 ### Mondelinge verdediging: ###
 * Wat doet taaak.php exact?
